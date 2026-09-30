@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radares · CMA</title>
+<meta name="description" content="Comunidad Meteorológica Argentina: aprendé, compartí y seguí el tiempo en Argentina.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="progress"></div>
+<header>
+  <a href="index.html" class="logo">CMA<small>Comunidad Meteorológica Argentina</small></a>
+  <nav id="menu">
+    <a href="index.html">Inicio</a>
+    <a href="alertas.html">Alertas</a>
+    <a href="radares.html" aria-current="page">Radares</a>
+    <a href="multimedia.html">Multimedia</a>
+    <a href="redes.html">Redes</a>
+    <a href="contacto.html" class="btn primary">Enviá imágenes</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="Abrir menú">☰</button>
+</header>
+<div class="page-head"><h1>Radares</h1><p>Mirá el tiempo en vivo e identificá qué tipo de tormenta estás viendo.</p></div><main>
+<section><div class="wrap">
+  <div class="chips"><a class="chip" href="radares.html" aria-pressed="true">Herramientas</a><a class="chip" href="radar-windy.html" aria-pressed="false">Radar Windy</a><a class="chip" href="radar-meteored.html" aria-pressed="false">Radar MeteoRed</a></div>
+  <h2 class="reveal">Radares integrados</h2>
+  <p class="lead reveal">Cada uno tiene su propia página.</p>
+  <div class="cards reveal">
+    <a class="card" href="radar-windy.html"><span class="ico">🌬️</span><h3>Radar Windy</h3><p>Mapa interactivo con radar, satélite, lluvia y viento. Elegí la región y la capa.</p><span class="go">Abrir radar</span></a>
+    <a class="card" href="radar-meteored.html"><span class="ico">🌧️</span><h3>Radar MeteoRed</h3><p>Radar de precipitaciones de Meteored para Argentina, con animación de las últimas imágenes.</p><span class="go">Abrir radar</span></a>
+    <a class="card" href="https://www.smn.gob.ar/radares" target="_blank" rel="noopener"><span class="ico">📡</span><h3>Radares del SMN</h3><p>Red oficial de radares meteorológicos.</p><span class="go">Abrir en el SMN</span></a>
+    <a class="card" href="https://www.star.nesdis.noaa.gov/goes/" target="_blank" rel="noopener"><span class="ico">🌎</span><h3>Satélite GOES</h3><p>Vistas de todo el hemisferio en varios canales.</p><span class="go">Abrir</span></a>
+  </div>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <h2 class="reveal">¿Qué tipo de tormenta es?</h2>
+  <p class="lead reveal">Cargá lo que ves en el radar y te damos una interpretación orientativa.</p>
+  <div class="cls">
+    <div class="copybox reveal">
+      <form id="clsForm" novalidate>
+        <div><label for="cShape">Forma del eco</label><select id="cShape"><option value="area">Área extensa y pareja</option><option value="single">Celda aislada</option><option value="group">Varias celdas agrupadas</option><option value="line">Línea larga de ecos</option></select></div>
+        <div><label for="cDbz">Reflectividad máxima (dBZ)</label><input id="cDbz" inputmode="numeric" placeholder="Ej: 55"></div>
+        <div><label for="cHook">¿Ves un gancho en la parte trasera del eco?</label><select id="cHook"><option value="no">No</option><option value="si">Sí</option></select></div>
+        <div><label for="cBow">¿La línea se curva hacia adelante, como un arco?</label><select id="cBow"><option value="no">No</option><option value="si">Sí</option></select></div>
+        <div><label for="cRot">¿La velocidad radial muestra rotación (colores opuestos pegados)?</label><select id="cRot"><option value="no">No o no tengo el dato</option><option value="si">Sí</option></select></div>
+        <button class="btn primary" type="submit">Identificar</button>
+      </form>
+    </div>
+    <div class="reveal"><div class="lvl" id="clsOut" aria-live="polite"><h3>Resultado</h3><p style="color:var(--muted)">Completá el formulario y tocá "Identificar".</p></div>
+      <p class="hint" style="color:#B8C7DE">Es una guía educativa y no reemplaza el análisis de un meteorólogo ni las alertas oficiales.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2 class="reveal">Tipos de tormenta</h2>
+  <div class="chips reveal" id="stChips" role="group" aria-label="Tipo de tormenta" style="margin-top:18px"></div>
+  <div class="lvl reveal" id="stBox" aria-live="polite"></div>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <h2 class="reveal">Firmas de radar para reconocer</h2>
+  <div class="reveal" style="margin-top:20px;color:var(--ink)">
+    <details><summary>🪝 Eco de gancho</summary><div class="body">Apéndice curvo en la parte trasera de una celda, típico de supercelda con rotación. Puede indicar un mesociclón y riesgo de tornado.</div></details>
+    <details><summary>🏹 Eco en arco (bow echo)</summary><div class="body">Segmento de línea que se curva hacia adelante. Se asocia con vientos lineales fuertes y dañinos en la zona central del arco.</div></details>
+    <details><summary>🕳️ Bóveda de eco débil (BWER)</summary><div class="body">Zona de eco débil rodeada por eco intenso. Señala una corriente ascendente muy fuerte que sostiene granizo en altura.</div></details>
+    <details><summary>🔺 Pico de dispersión de tres cuerpos</summary><div class="body">Línea de eco débil detrás del núcleo más fuerte de la tormenta, en dirección opuesta al radar. Suele indicar granizo grande.</div></details>
+    <details><summary>🔄 Par de velocidades opuestas</summary><div class="body">En velocidad radial, colores de acercamiento y alejamiento juntos indican rotación en la tormenta.</div></details>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2 class="reveal">Escala de reflectividad</h2>
+  <p class="lead reveal">Mové el control para ver qué suele significar cada valor.</p>
+  <div class="reveal" style="max-width:640px">
+    <div class="dbz-bar"><b id="dbzMark" style="left:0"></b></div>
+    <input type="range" id="dbz" min="5" max="70" value="20" aria-label="Reflectividad en dBZ">
+    <h3 style="margin-top:14px"><span id="dbzVal">20</span> dBZ</h3>
+    <p id="dbzTxt" class="hint"></p>
+    <p class="hint">Interpretación orientativa: el radar no confirma por sí solo granizo ni intensidad en superficie.</p>
+  </div>
+</div></section>
+</main>
+<footer>
+  <div class="links"><a href="fenomenos.html">Fenómenos</a><a href="herramientas.html">Herramientas</a><a href="comunidad.html">Comunidad</a><a href="contacto.html">Contacto</a><a href="https://www.smn.gob.ar" target="_blank" rel="noopener">SMN oficial</a></div>
+  © <span id="year"></span> Comunidad Meteorológica Argentina (CMA) · Para alertas oficiales consultá siempre el Servicio Meteorológico Nacional
+</footer>
+<div class="toast" id="toast" role="status"></div>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Windy · CMA</title>
+<meta name="description" content="Comunidad Meteorológica Argentina: aprendé, compartí y seguí el tiempo en Argentina.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="progress"></div>
+<header>
+  <a href="index.html" class="logo">CMA<small>Comunidad Meteorológica Argentina</small></a>
+  <nav id="menu">
+    <a href="index.html">Inicio</a>
+    <a href="alertas.html">Alertas</a>
+    <a href="radares.html" aria-current="page">Radares</a>
+    <a href="multimedia.html">Multimedia</a>
+    <a href="redes.html">Redes</a>
+    <a href="contacto.html" class="btn primary">Enviá imágenes</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="Abrir menú">☰</button>
+</header>
+<div class="page-head"><h1>Radar Windy</h1><p>Mapa interactivo en vivo. Elegí región y capa.</p></div><main><section><div class="wrap">
+  <div class="chips"><a class="chip" href="radares.html" aria-pressed="false">Herramientas</a><a class="chip" href="radar-windy.html" aria-pressed="true">Radar Windy</a><a class="chip" href="radar-meteored.html" aria-pressed="false">Radar MeteoRed</a></div>
+  <div class="chips" id="wRegion" role="group" aria-label="Región">
+    <button class="chip" data-r="-38,-64,4" aria-pressed="true">Todo el país</button>
+    <button class="chip" data-r="-34.6,-58.4,7" aria-pressed="false">Buenos Aires y AMBA</button>
+    <button class="chip" data-r="-32,-60.5,6" aria-pressed="false">Litoral y Centro</button>
+    <button class="chip" data-r="-33,-68.5,6" aria-pressed="false">Cuyo</button>
+    <button class="chip" data-r="-42,-69,5" aria-pressed="false">Patagonia</button>
+    <button class="chip" data-r="-26.5,-64.5,6" aria-pressed="false">Norte</button>
+  </div>
+  <div class="chips" id="wLayer" role="group" aria-label="Capa">
+    <button class="chip" data-l="radar" aria-pressed="true">📡 Radar</button>
+    <button class="chip" data-l="satellite" aria-pressed="false">🛰️ Satélite</button>
+    <button class="chip" data-l="rain" aria-pressed="false">🌧️ Lluvia</button>
+    <button class="chip" data-l="clouds" aria-pressed="false">☁️ Nubes</button>
+    <button class="chip" data-l="wind" aria-pressed="false">💨 Viento</button>
+  </div>
+  <iframe class="embed" id="wFrame" title="Mapa de Windy" loading="lazy" allowfullscreen></iframe>
+  <p class="hint">Mapa de Windy. <a id="wOpen" href="https://www.windy.com" target="_blank" rel="noopener">Abrir en pantalla completa en Windy</a>. Para alertas oficiales consultá el SMN.</p>
+</div></section></main>
+<footer>
+  <div class="links"><a href="fenomenos.html">Fenómenos</a><a href="herramientas.html">Herramientas</a><a href="comunidad.html">Comunidad</a><a href="contacto.html">Contacto</a><a href="https://www.smn.gob.ar" target="_blank" rel="noopener">SMN oficial</a></div>
+  © <span id="year"></span> Comunidad Meteorológica Argentina (CMA) · Para alertas oficiales consultá siempre el Servicio Meteorológico Nacional
+</footer>
+<div class="toast" id="toast" role="status"></div>
+<script src="script.js"></script>
+</body>
+</html>

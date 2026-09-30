@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alertas · CMA</title>
+<meta name="description" content="Comunidad Meteorológica Argentina: aprendé, compartí y seguí el tiempo en Argentina.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="progress"></div>
+<header>
+  <a href="index.html" class="logo">CMA<small>Comunidad Meteorológica Argentina</small></a>
+  <nav id="menu">
+    <a href="index.html">Inicio</a>
+    <a href="alertas.html" aria-current="page">Alertas</a>
+    <a href="radares.html">Radares</a>
+    <a href="multimedia.html">Multimedia</a>
+    <a href="redes.html">Redes</a>
+    <a href="contacto.html" class="btn primary">Enviá imágenes</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="Abrir menú">☰</button>
+</header>
+<div class="page-head"><h1>Alertas</h1><p>Entendé los niveles de alerta y prepará a tu familia. Las alertas oficiales las emite el SMN.</p></div><main>
+<section><div class="wrap">
+  <h2 class="reveal">Niveles de alerta</h2>
+  <p class="lead reveal">Guía orientativa. Las definiciones y avisos vigentes están en el sitio del SMN.</p>
+  <div class="chips reveal" id="lvlChips" role="group" aria-label="Nivel de alerta">
+    <button class="chip" data-lv="y" aria-pressed="true"><span class="dot" style="--c:#F5C400"></span>Amarillo</button>
+    <button class="chip" data-lv="o" aria-pressed="false"><span class="dot" style="--c:#F07F1A"></span>Naranja</button>
+    <button class="chip" data-lv="r" aria-pressed="false"><span class="dot" style="--c:#D62E2E"></span>Rojo</button>
+  </div>
+  <div class="lvl lvl-y reveal" id="lvl" aria-live="polite"></div>
+  <p style="margin-top:18px" class="reveal"><a class="btn" style="color:var(--accent)" href="https://www.smn.gob.ar/alertas" target="_blank" rel="noopener">Ver alertas vigentes en el SMN</a></p>
+</div></section>
+
+<section class="band"><div class="wrap two">
+  <div class="reveal"><h2>Plan de emergencia</h2>
+  <p class="lead">Marcá lo que ya tenés listo. Tu progreso queda guardado en este navegador.</p>
+  <div class="meter"><i id="meter"></i></div><p id="meterTxt" style="color:#B8C7DE">0 de 6 listos</p></div>
+  <div class="checks reveal" id="checks" style="color:var(--ink)">
+    <label><input type="checkbox"> Linterna y pilas de repuesto</label>
+    <label><input type="checkbox"> Botiquín y medicamentos necesarios</label>
+    <label><input type="checkbox"> Agua y alimentos no perecederos para 3 días</label>
+    <label><input type="checkbox"> Celular cargado y batería externa</label>
+    <label><input type="checkbox"> Documentos importantes en bolsa hermética</label>
+    <label><input type="checkbox"> Lugar seguro de la casa definido con la familia</label>
+  </div>
+</div></section>
+
+<section><div class="wrap two">
+  <div class="reveal"><h2>Generador de avisos</h2><p class="lead">Armá un mensaje claro para compartir en la comunidad. Es un aviso comunitario y no reemplaza al oficial.</p></div>
+  <div class="copybox reveal">
+    <form id="alertForm" novalidate>
+      <div><label for="aType">Fenómeno</label><select id="aType"><option>Tormenta fuerte</option><option>Granizo</option><option>Vientos fuertes</option><option>Lluvias intensas</option><option>Niebla</option><option>Ola de calor</option></select></div>
+      <div><label for="aZone">Zona</label><input id="aZone" placeholder="Ej: Zona norte del Gran Buenos Aires"></div>
+      <div><label for="aLevel">Nivel oficial vigente (si lo hay)</label><select id="aLevel"><option>Sin alerta oficial</option><option>Amarillo</option><option>Naranja</option><option>Rojo</option></select></div>
+      <div><label for="aTime">Horario aproximado</label><input id="aTime" placeholder="Ej: 18 a 21 h"></div>
+      <button class="btn primary" type="submit">Generar mensaje</button>
+    </form>
+    <div class="msg" id="alertMsg">Tu mensaje aparecerá acá.</div>
+    <button class="btn" id="copyAlert" style="color:var(--accent)">Copiar</button>
+  </div>
+</div></section>
+</main>
+<footer>
+  <div class="links"><a href="fenomenos.html">Fenómenos</a><a href="herramientas.html">Herramientas</a><a href="comunidad.html">Comunidad</a><a href="contacto.html">Contacto</a><a href="https://www.smn.gob.ar" target="_blank" rel="noopener">SMN oficial</a></div>
+  © <span id="year"></span> Comunidad Meteorológica Argentina (CMA) · Para alertas oficiales consultá siempre el Servicio Meteorológico Nacional
+</footer>
+<div class="toast" id="toast" role="status"></div>
+<script src="script.js"></script>
+</body>
+</html>

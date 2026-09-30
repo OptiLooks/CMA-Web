@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inicio · CMA</title>
+<meta name="description" content="Comunidad Meteorológica Argentina: aprendé, compartí y seguí el tiempo en Argentina.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="progress"></div>
+<header>
+  <a href="index.html" class="logo">CMA<small>Comunidad Meteorológica Argentina</small></a>
+  <nav id="menu">
+    <a href="index.html" aria-current="page">Inicio</a>
+    <a href="alertas.html">Alertas</a>
+    <a href="radares.html">Radares</a>
+    <a href="multimedia.html">Multimedia</a>
+    <a href="redes.html">Redes</a>
+    <a href="contacto.html" class="btn primary">Enviá imágenes</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="Abrir menú">☰</button>
+</header>
+<main>
+<section class="hero" id="inicio" data-mode="sol">
+  <canvas id="sky" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <h1 id="title">Mirá el cielo. Entendé el tiempo.</h1>
+    <p>Comunidad Meteorológica Argentina: alertas, radares, multimedia y gente que comparte la pasión por el clima. Cambiá el clima del fondo:</p>
+    <div class="modes" role="group" aria-label="Clima del fondo">
+      <button data-mode="sol" aria-pressed="true">☀️ Sol</button>
+      <button data-mode="lluvia" aria-pressed="false">🌧️ Lluvia</button>
+      <button data-mode="tormenta" aria-pressed="false">⛈️ Tormenta</button>
+      <button data-mode="nieve" aria-pressed="false">❄️ Nieve</button>
+    </div>
+    <a href="alertas.html" class="btn primary">Ver alertas</a>
+  </div>
+</section>
+<section><div class="wrap">
+  <h2 class="reveal">Seguí el tiempo con la CMA</h2>
+  <p class="lead reveal">Todo lo que necesitás, en un solo lugar.</p>
+  <div class="cards reveal">
+    <a class="card" href="alertas.html"><span class="ico">🚨</span><h3>Alertas</h3><p>Qué significa cada nivel de alerta y qué hacer. Plan de emergencia y generador de avisos.</p><span class="go">Ver alertas</span></a>
+    <a class="card" href="radares.html"><span class="ico">📡</span><h3>Radares</h3><p>Enlaces a radares y satélites, y una guía interactiva para leer la reflectividad.</p><span class="go">Ver radares</span></a>
+    <a class="card" href="multimedia.html"><span class="ico">📸</span><h3>Multimedia</h3><p>Galería de fotos, videos y timelapses de la comunidad con visor a pantalla completa.</p><span class="go">Ver galería</span></a>
+    <a class="card" href="redes.html"><span class="ico">💬</span><h3>Redes sociales</h3><p>Dónde encontrarnos, hashtags oficiales y cómo compartir con responsabilidad.</p><span class="go">Ver redes</span></a>
+  </div>
+</div></section>
+<section class="band"><div class="wrap two reveal">
+  <div><h2>Información oficial primero</h2>
+  <p class="lead">Somos aficionados y divulgadores. Para pronósticos y alertas oficiales, la fuente es el Servicio Meteorológico Nacional.</p>
+  <a class="btn primary" href="https://www.smn.gob.ar" target="_blank" rel="noopener">Ir al SMN</a></div>
+  <p style="font-size:4.5rem;text-align:center" aria-hidden="true">🛰️</p>
+</div></section>
+<section><div class="wrap">
+  <h2 class="reveal">Para aprender</h2>
+  <div class="cards reveal" style="margin-top:20px">
+    <a class="card" href="fenomenos.html"><span class="ico">🌪️</span><h3>Fenómenos</h3><p>Zonda, sudestada, granizo, tornados y más.</p></a>
+    <a class="card" href="herramientas.html"><span class="ico">🧮</span><h3>Herramientas</h3><p>Conversores, Beaufort y punto de rocío.</p></a>
+    <a class="card" href="comunidad.html"><span class="ico">🤝</span><h3>Comunidad</h3><p>Reglas y cómo reportar observaciones.</p></a>
+  </div>
+</div></section>
+</main>
+<footer>
+  <div class="links"><a href="fenomenos.html">Fenómenos</a><a href="herramientas.html">Herramientas</a><a href="comunidad.html">Comunidad</a><a href="contacto.html">Contacto</a><a href="https://www.smn.gob.ar" target="_blank" rel="noopener">SMN oficial</a></div>
+  © <span id="year"></span> Comunidad Meteorológica Argentina (CMA) · Para alertas oficiales consultá siempre el Servicio Meteorológico Nacional
+</footer>
+<div class="toast" id="toast" role="status"></div>
+<script src="script.js"></script>
+</body>
+</html>

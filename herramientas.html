@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Herramientas · CMA</title>
+<meta name="description" content="Comunidad Meteorológica Argentina: aprendé, compartí y seguí el tiempo en Argentina.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="progress"></div>
+<header>
+  <a href="index.html" class="logo">CMA<small>Comunidad Meteorológica Argentina</small></a>
+  <nav id="menu">
+    <a href="index.html">Inicio</a>
+    <a href="alertas.html">Alertas</a>
+    <a href="radares.html">Radares</a>
+    <a href="multimedia.html">Multimedia</a>
+    <a href="redes.html">Redes</a>
+    <a href="contacto.html" class="btn primary">Enviá imágenes</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="Abrir menú">☰</button>
+</header>
+<div class="page-head"><h1>Herramientas</h1><p>Calculá mientras escribís. Los resultados se actualizan solos.</p></div>
+<main><section><div class="wrap">
+<div class="tools reveal">
+  <div class="tool"><h3>Temperatura</h3><label for="tTemp">Grados Celsius (°C)</label><input id="tTemp" inputmode="decimal" placeholder="Ej: 25"><div class="out" id="oTemp">Ingresa un valor.</div></div>
+  <div class="tool"><h3>Velocidad del viento</h3><label for="tWind">Kilómetros por hora (km/h)</label><input id="tWind" inputmode="decimal" placeholder="Ej: 45"><div class="out" id="oWind">Ingresa un valor.</div></div>
+  <div class="tool"><h3>Punto de rocío</h3><label for="dT">Temperatura (°C)</label><input id="dT" inputmode="decimal" placeholder="Ej: 22"><label for="dH" style="display:block;margin-top:12px">Humedad relativa (%)</label><input id="dH" inputmode="decimal" placeholder="Ej: 60"><div class="out" id="oDew">Ingresa temperatura y humedad.</div></div>
+  <div class="tool"><h3>Sensación térmica por viento</h3><label for="wT">Temperatura (°C)</label><input id="wT" inputmode="decimal" placeholder="Ej: 5"><label for="wV" style="display:block;margin-top:12px">Viento (km/h)</label><input id="wV" inputmode="decimal" placeholder="Ej: 30"><div class="out" id="oChill">Ingresa temperatura y viento.</div></div>
+</div>
+<h2 style="margin-top:56px" class="reveal">Escala de Beaufort</h2>
+<p class="lead reveal">Escribí el viento en la herramienta de arriba y se marca la fila que corresponde.</p>
+<div class="scroll-x reveal"><table id="beaufort"><thead><tr><th>Grado</th><th>Nombre</th><th>km/h</th></tr></thead><tbody>
+<tr data-b="0"><td>0</td><td>Calma</td><td>menos de 1</td></tr>
+<tr data-b="1"><td>1</td><td>Ventolina</td><td>1 – 5</td></tr>
+<tr data-b="2"><td>2</td><td>Brisa muy débil</td><td>6 – 11</td></tr>
+<tr data-b="3"><td>3</td><td>Brisa débil</td><td>12 – 19</td></tr>
+<tr data-b="4"><td>4</td><td>Brisa moderada</td><td>20 – 28</td></tr>
+<tr data-b="5"><td>5</td><td>Brisa fresca</td><td>29 – 38</td></tr>
+<tr data-b="6"><td>6</td><td>Brisa fuerte</td><td>39 – 49</td></tr>
+<tr data-b="7"><td>7</td><td>Viento fuerte</td><td>50 – 61</td></tr>
+<tr data-b="8"><td>8</td><td>Temporal</td><td>62 – 74</td></tr>
+<tr data-b="9"><td>9</td><td>Temporal fuerte</td><td>75 – 88</td></tr>
+<tr data-b="10"><td>10</td><td>Temporal duro</td><td>89 – 102</td></tr>
+<tr data-b="11"><td>11</td><td>Temporal muy duro</td><td>103 – 117</td></tr>
+<tr data-b="12"><td>12</td><td>Huracán</td><td>118 o más</td></tr>
+</tbody></table></div>
+</div></section></main>
+<footer>
+  <div class="links"><a href="fenomenos.html">Fenómenos</a><a href="herramientas.html">Herramientas</a><a href="comunidad.html">Comunidad</a><a href="contacto.html">Contacto</a><a href="https://www.smn.gob.ar" target="_blank" rel="noopener">SMN oficial</a></div>
+  © <span id="year"></span> Comunidad Meteorológica Argentina (CMA) · Para alertas oficiales consultá siempre el Servicio Meteorológico Nacional
+</footer>
+<div class="toast" id="toast" role="status"></div>
+<script src="script.js"></script>
+</body>
+</html>

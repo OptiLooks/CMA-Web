@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Enviá tus imágenes · CMA</title>
+<meta name="description" content="Comunidad Meteorológica Argentina: aprendé, compartí y seguí el tiempo en Argentina.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="progress"></div>
+<header>
+  <a href="index.html" class="logo">CMA<small>Comunidad Meteorológica Argentina</small></a>
+  <nav id="menu">
+    <a href="index.html">Inicio</a>
+    <a href="alertas.html">Alertas</a>
+    <a href="radares.html">Radares</a>
+    <a href="multimedia.html">Multimedia</a>
+    <a href="redes.html">Redes</a>
+    <a href="contacto.html" class="btn primary">Enviá imágenes</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="Abrir menú">☰</button>
+</header>
+<div class="page-head"><h1>Enviá tus imágenes</h1><p>Tus fotos y videos ayudan a la comunidad. Elegí cómo mandarlos.</p></div><main>
+<section><div class="wrap">
+  <div class="cards reveal">
+    <div class="card wa big"><span class="ico">💬</span><h3>Canal de WhatsApp</h3><p>Entrá al canal de la CMA y seguí las indicaciones que publicamos ahí para enviar tu material.</p><a class="btn primary" data-link="whatsapp" target="_blank" rel="noopener">Entrar al canal</a></div>
+    <div class="card tt big"><span class="ico">🎵</span><h3>TikTok · @meteolauoficial</h3><p>Mandanos tus imágenes personalmente por mensaje directo. Abrí el perfil y tocá "Mensaje".</p><a class="btn primary" data-link="tiktok" target="_blank" rel="noopener">Ir al TikTok</a></div>
+  </div>
+</div></section>
+
+<section class="band"><div class="wrap cls">
+  <div class="reveal"><h2>Antes de enviar</h2><p class="lead">Cuatro pasos para que tu material sea útil.</p>
+    <ol class="steps" style="color:var(--ink)">
+      <li>Sacá la foto o el video desde un lugar seguro.</li>
+      <li>Anotá dónde y cuándo lo hiciste.</li>
+      <li>Mandalo sin filtros ni ediciones, en la mejor calidad posible.</li>
+      <li>Incluí tu nombre o usuario si querés que te demos crédito.</li>
+    </ol></div>
+  <div class="copybox reveal">
+    <h3>Armá tu mensaje</h3>
+    <form id="sendForm" novalidate>
+      <div><label for="sType">Qué muestra</label><select id="sType"><option>Tormenta</option><option>Rayos</option><option>Granizo</option><option>Nube de embudo o tornado</option><option>Viento o daños</option><option>Inundación</option><option>Cielo o amanecer/atardecer</option><option>Otro</option></select></div>
+      <div><label for="sPlace">Lugar</label><input id="sPlace" placeholder="Ej: Rosario, Santa Fe"></div>
+      <div><label for="sWhen">Fecha y hora aproximada</label><input id="sWhen" placeholder="Ej: hoy 18:30"></div>
+      <div><label for="sName">Crédito (opcional)</label><input id="sName" placeholder="Tu nombre o @usuario"></div>
+      <button class="btn primary" type="submit">Generar mensaje</button>
+    </form>
+    <div class="msg" id="sendMsg">Tu mensaje aparecerá acá. Pegalo junto con tus imágenes.</div>
+    <button class="btn" id="copySend" style="color:var(--accent)">Copiar mensaje</button>
+  </div>
+</div></section>
+</main>
+<footer>
+  <div class="links"><a href="fenomenos.html">Fenómenos</a><a href="herramientas.html">Herramientas</a><a href="comunidad.html">Comunidad</a><a href="contacto.html">Contacto</a><a href="https://www.smn.gob.ar" target="_blank" rel="noopener">SMN oficial</a></div>
+  © <span id="year"></span> Comunidad Meteorológica Argentina (CMA) · Para alertas oficiales consultá siempre el Servicio Meteorológico Nacional
+</footer>
+<div class="toast" id="toast" role="status"></div>
+<script src="script.js"></script>
+</body>
+</html>

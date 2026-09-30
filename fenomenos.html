@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fenómenos · CMA</title>
+<meta name="description" content="Comunidad Meteorológica Argentina: aprendé, compartí y seguí el tiempo en Argentina.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="progress"></div>
+<header>
+  <a href="index.html" class="logo">CMA<small>Comunidad Meteorológica Argentina</small></a>
+  <nav id="menu">
+    <a href="index.html">Inicio</a>
+    <a href="alertas.html">Alertas</a>
+    <a href="radares.html">Radares</a>
+    <a href="multimedia.html">Multimedia</a>
+    <a href="redes.html">Redes</a>
+    <a href="contacto.html" class="btn primary">Enviá imágenes</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="Abrir menú">☰</button>
+</header>
+<div class="page-head"><h1>Fenómenos</h1><p>Lo que pasa en nuestro cielo, explicado simple. Tocá cada uno para leer más.</p></div>
+<main><section><div class="wrap reveal">
+<details open><summary>⛈️ Tormenta eléctrica</summary><div class="body">Se forma cuando aire cálido y húmedo asciende con fuerza y crea nubes de gran desarrollo vertical (cumulonimbus). Trae rayos, lluvia intensa y, a veces, granizo o ráfagas fuertes. <strong>Qué hacer:</strong> refugiate en un lugar cerrado, alejate de árboles y agua, y evitá usar equipos conectados a la red eléctrica.</div></details>
+<details><summary>🌬️ Zonda</summary><div class="body">Viento cálido y seco que baja desde la cordillera hacia Cuyo y zonas cercanas. Sube la temperatura, baja mucho la humedad y puede levantar polvo. <strong>Qué hacer:</strong> hidratate, evitá actividades al aire libre y no hagas fuego.</div></details>
+<details><summary>🌊 Sudestada</summary><div class="body">Viento del sudeste sostenido sobre el Río de la Plata que empuja agua hacia la costa y puede causar crecidas, lluvias persistentes y mal tiempo en el Litoral y el AMBA. <strong>Qué hacer:</strong> seguí los avisos oficiales y evitá zonas bajas cercanas al río.</div></details>
+<details><summary>🧊 Granizo</summary><div class="body">Piedras de hielo que se forman dentro de tormentas fuertes, cuando las corrientes ascendentes mantienen las gotas en altura hasta congelarlas. Puede dañar techos, autos y cultivos. <strong>Qué hacer:</strong> resguardate bajo techo firme y proteger vehículos si es posible.</div></details>
+<details><summary>🌪️ Tornado</summary><div class="body">Columna de aire en rotación que toca el suelo, asociada a tormentas severas. Argentina tiene actividad tornádica, sobre todo en la región pampeana y el centro-norte. <strong>Qué hacer:</strong> andá a la planta baja o a un cuarto interior sin ventanas y alejate de vidrios.</div></details>
+<details><summary>🔥 Ola de calor</summary><div class="body">Período de varios días con temperaturas máximas y mínimas muy por encima de lo normal para la zona. <strong>Qué hacer:</strong> tomá agua seguido, evitá el sol en horas centrales y prestá atención a niños, personas mayores y mascotas.</div></details>
+<details><summary>🌫️ Niebla</summary><div class="body">Nubes a nivel del suelo que reducen la visibilidad, frecuentes en otoño e invierno. <strong>Qué hacer:</strong> manejá despacio, con luces bajas, y aumentá la distancia con otros vehículos.</div></details>
+<details><summary>💨 Pampero</summary><div class="body">Viento fuerte del sudoeste que llega tras el paso de un frente frío en la llanura pampeana; baja la temperatura y despeja el cielo. <strong>Qué hacer:</strong> asegurá objetos sueltos y tené cuidado con ramas y carteles.</div></details>
+</div></section></main>
+<footer>
+  <div class="links"><a href="fenomenos.html">Fenómenos</a><a href="herramientas.html">Herramientas</a><a href="comunidad.html">Comunidad</a><a href="contacto.html">Contacto</a><a href="https://www.smn.gob.ar" target="_blank" rel="noopener">SMN oficial</a></div>
+  © <span id="year"></span> Comunidad Meteorológica Argentina (CMA) · Para alertas oficiales consultá siempre el Servicio Meteorológico Nacional
+</footer>
+<div class="toast" id="toast" role="status"></div>
+<script src="script.js"></script>
+</body>
+</html>

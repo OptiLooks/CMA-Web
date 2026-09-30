@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comunidad · CMA</title>
+<meta name="description" content="Comunidad Meteorológica Argentina: aprendé, compartí y seguí el tiempo en Argentina.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="progress"></div>
+<header>
+  <a href="index.html" class="logo">CMA<small>Comunidad Meteorológica Argentina</small></a>
+  <nav id="menu">
+    <a href="index.html">Inicio</a>
+    <a href="alertas.html">Alertas</a>
+    <a href="radares.html">Radares</a>
+    <a href="multimedia.html">Multimedia</a>
+    <a href="redes.html">Redes</a>
+    <a href="contacto.html" class="btn primary">Enviá imágenes</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="Abrir menú">☰</button>
+</header>
+<div class="page-head"><h1>Comunidad</h1><p>Un espacio para aprender juntos, con respeto y con datos.</p></div>
+<main>
+<section><div class="wrap">
+<h2 class="reveal">Reglas de convivencia</h2>
+<p class="lead reveal">Para que todos puedan participar tranquilos.</p>
+<div class="cards reveal">
+  <div class="card"><span class="ico">🤝</span><h3>Respeto</h3><p>Tratá bien a todos los miembros. Las diferencias de nivel son parte de aprender.</p></div>
+  <div class="card"><span class="ico">📡</span><h3>Fuentes claras</h3><p>Cuando compartas un pronóstico, indicá de dónde sale. Las alertas oficiales van primero.</p></div>
+  <div class="card"><span class="ico">🚫</span><h3>Sin alarmismo</h3><p>No difundas rumores ni imágenes sin verificar. Un aviso falso puede generar pánico real.</p></div>
+  <div class="card"><span class="ico">🛡️</span><h3>Seguridad</h3><p>Nunca te expongas a un riesgo para conseguir una foto o un video de una tormenta.</p></div>
+</div></div></section>
+<section class="band"><div class="wrap">
+<h2 class="reveal">Cómo reportar una observación</h2>
+<p class="lead reveal">Un buen reporte ayuda a todos. Incluí estos datos:</p>
+<div class="reveal">
+<details><summary>📍 Dónde</summary><div class="body">Localidad y provincia, o el barrio si es un evento local.</div></details>
+<details><summary>🕒 Cuándo</summary><div class="body">Fecha y hora aproximada del fenómeno y cuánto duró.</div></details>
+<details><summary>📝 Qué viste</summary><div class="body">Tipo de fenómeno, intensidad y efectos: viento, granizo (tamaño), lluvia, daños.</div></details>
+<details><summary>📷 Evidencia</summary><div class="body">Foto o video con fecha, sin editar. Si sacaste la imagen desde un lugar seguro, mejor.</div></details>
+</div></div></section>
+</main>
+<footer>
+  <div class="links"><a href="fenomenos.html">Fenómenos</a><a href="herramientas.html">Herramientas</a><a href="comunidad.html">Comunidad</a><a href="contacto.html">Contacto</a><a href="https://www.smn.gob.ar" target="_blank" rel="noopener">SMN oficial</a></div>
+  © <span id="year"></span> Comunidad Meteorológica Argentina (CMA) · Para alertas oficiales consultá siempre el Servicio Meteorológico Nacional
+</footer>
+<div class="toast" id="toast" role="status"></div>
+<script src="script.js"></script>
+</body>
+</html>

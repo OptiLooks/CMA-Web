@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Actualizar multimedia · CMA</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="page-head" style="padding-top:60px"><h1>Actualizar multimedia</h1><p>Elegí tu carpeta "multimedia" y el catálogo se genera solo.</p></div>
+<main><section><div class="wrap">
+  <p class="lead">Herramienta interna: funciona en Chrome o Edge. No hace falta subirla a tu web pública.</p>
+  <button class="btn primary" id="go">Elegir carpeta multimedia</button>
+  <div class="msg" id="log" style="margin-top:20px">Todavía no elegiste ninguna carpeta.</div>
+</div></section></main>
+<script>
+const $ = s => document.querySelector(s);
+const IMG = /\.(png|jpe?g|webp|gif)$/i, VID = /\.(mp4|webm)$/i;
+const GRAD = ['linear-gradient(135deg,#1D2438,#4B5470)','linear-gradient(135deg,#F5A524,#B0208A)','linear-gradient(135deg,#7E93AD,#DCE6F2)',
+  'linear-gradient(135deg,#0F2440,#1F6FEB)','linear-gradient(135deg,#2F80ED,#1D2438)','linear-gradient(135deg,#F07F1A,#7A4A1D)'];
+const norm = s => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
+const nice = n => n.replace(/^\d+[-_ ]*/, '').replace(/[-_]+/g, ' ').trim();
+const q = p => p.split('/').map(encodeURIComponent).join('/');
+const parse = txt => { const d = {}; txt.split(/\r?\n/).forEach(l => { const i = l.indexOf(':'); if (i > 0) d[norm(l.slice(0, i))] = l.slice(i + 1).trim(); }); return d; };
+async function list(dir, kind) { const o = []; for await (const [n, h] of dir.entries()) if (h.kind === kind) o.push([n, h]); return o.sort((a, b) => a[0].localeCompare(b[0])); }
+
+$('#go').onclick = async () => {
+  const log = m => $('#log').textContent = m;
+  if (!window.showDirectoryPicker) return log('Este navegador no permite leer carpetas. Usá Chrome o Edge o subí los archivos a GitHub (el catálogo se actualiza solo).');
+  try {
+    const root = await showDirectoryPicker({ mode: 'readwrite' });
+    const items = [], warn = []; let n = 0;
+    if (root.name !== 'multimedia') warn.push(`La carpeta elegida se llama "${root.name}"; en la web debe llamarse "multimedia".`);
+    for (const [dirName, def] of [['imagenes', 'foto'], ['videos', 'video']]) {
+      let dir; try { dir = await root.getDirectoryHandle(dirName); } catch (e) { warn.push(`No encontré la carpeta "${dirName}".`); continue; }
+      for (const [name, h] of await list(dir, 'directory')) {
+        const fs = await list(h, 'file'), data = {};
+        const dt = fs.find(f => /^datos\.txt$/i.test(f[0]));
+        if (dt) Object.assign(data, parse(await (await dt[1].getFile()).text()));
+        const main = fs.find(f => (def === 'foto' ? IMG : VID).test(f[0]));
+        if (!main) { warn.push(`${name}: falta ${def === 'foto' ? 'la imagen' : 'el video'}`); continue; }
+        const poster = def === 'video' ? fs.find(f => IMG.test(f[0])) : null;
+        const base = `multimedia/${dirName}/${name}/`, tipo = norm(data.tipo || '');
+        items.push({ t: data.titulo || nice(name), k: ['foto', 'video', 'timelapse'].includes(tipo) ? tipo : def,
+          src: q(base + main[0]), poster: poster ? q(base + poster[0]) : '', lugar: data.lugar || '', fecha: data.fecha || '',
+          autor: data.autor || '', desc: data.descripcion || '', g: GRAD[n++ % GRAD.length] });
+      }
+    }
+    const txt = '/* Archivo generado automáticamente. No lo edites a mano. */\nconst MEDIA_CATALOGO = ' + JSON.stringify(items, null, 2) + ';\n';
+    const w = await (await root.getFileHandle('catalogo.js', { create: true })).createWritable();
+    await w.write(txt); await w.close();
+    log(`✔ Catálogo actualizado: ${items.length} elemento(s).\n` + items.map(i => `• ${i.t} (${i.k})`).join('\n') + (warn.length ? '\n\nAvisos:\n' + warn.join('\n') : ''));
+  } catch (e) { if (e.name !== 'AbortError') $('#log').textContent = 'No se pudo actualizar: ' + e.message; }
+};
+</script>
+</body>
+</html>

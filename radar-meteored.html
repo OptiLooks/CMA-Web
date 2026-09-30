@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar MeteoRed · CMA</title>
+<meta name="description" content="Comunidad Meteorológica Argentina: aprendé, compartí y seguí el tiempo en Argentina.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="progress"></div>
+<header>
+  <a href="index.html" class="logo">CMA<small>Comunidad Meteorológica Argentina</small></a>
+  <nav id="menu">
+    <a href="index.html">Inicio</a>
+    <a href="alertas.html">Alertas</a>
+    <a href="radares.html" aria-current="page">Radares</a>
+    <a href="multimedia.html">Multimedia</a>
+    <a href="redes.html">Redes</a>
+    <a href="contacto.html" class="btn primary">Enviá imágenes</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="Abrir menú">☰</button>
+</header>
+<div class="page-head"><h1>Radar MeteoRed</h1><p>Radar de lluvia de Meteored para Argentina, con animación de las últimas imágenes.</p></div><main><section><div class="wrap">
+  <div class="chips"><a class="chip" href="radares.html" aria-pressed="false">Herramientas</a><a class="chip" href="radar-windy.html" aria-pressed="false">Radar Windy</a><a class="chip" href="radar-meteored.html" aria-pressed="true">Radar MeteoRed</a></div>
+  <iframe class="embed" src="https://www.meteored.com.ar/radar/" title="Radar de Meteored" loading="lazy" allowfullscreen></iframe>
+  <p class="hint">Si el recuadro aparece vacío, es porque Meteored no permite mostrarse dentro de otras webs desde tu navegador. Usá el botón.</p>
+  <p style="margin-top:14px"><a class="btn primary" href="https://www.meteored.com.ar/radar/" target="_blank" rel="noopener">Abrir radar en Meteored</a></p>
+</div></section></main>
+<footer>
+  <div class="links"><a href="fenomenos.html">Fenómenos</a><a href="herramientas.html">Herramientas</a><a href="comunidad.html">Comunidad</a><a href="contacto.html">Contacto</a><a href="https://www.smn.gob.ar" target="_blank" rel="noopener">SMN oficial</a></div>
+  © <span id="year"></span> Comunidad Meteorológica Argentina (CMA) · Para alertas oficiales consultá siempre el Servicio Meteorológico Nacional
+</footer>
+<div class="toast" id="toast" role="status"></div>
+<script src="script.js"></script>
+</body>
+</html>

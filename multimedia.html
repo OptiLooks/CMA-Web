@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Multimedia · CMA</title>
+<meta name="description" content="Comunidad Meteorológica Argentina: aprendé, compartí y seguí el tiempo en Argentina.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="progress"></div>
+<header>
+  <a href="index.html" class="logo">CMA<small>Comunidad Meteorológica Argentina</small></a>
+  <nav id="menu">
+    <a href="index.html">Inicio</a>
+    <a href="alertas.html">Alertas</a>
+    <a href="radares.html">Radares</a>
+    <a href="multimedia.html" aria-current="page">Multimedia</a>
+    <a href="redes.html">Redes</a>
+    <a href="contacto.html" class="btn primary">Enviá imágenes</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="Abrir menú">☰</button>
+</header>
+<div class="page-head"><h1>Multimedia</h1><p>Fotos, videos y timelapses de la comunidad.</p></div><main>
+<section><div class="wrap">
+  <div class="chips reveal" id="mFilters" role="group" aria-label="Filtrar">
+    <button class="chip" data-f="todo" aria-pressed="true">Todo</button>
+    <button class="chip" data-f="foto" aria-pressed="false">📷 Fotos</button>
+    <button class="chip" data-f="video" aria-pressed="false">🎬 Videos</button>
+    <button class="chip" data-f="timelapse" aria-pressed="false">⏱️ Timelapses</button>
+  </div>
+  <div class="gal" id="gal"></div>
+  <p class="lead" style="margin-top:36px">¿Tenés material propio? <a href="contacto.html">Enviánoslo</a> con lugar, fecha y hora. Compartí solo lo que hayas hecho desde un lugar seguro.</p>
+  <!-- La galería lee multimedia/catalogo.js. Para agregar material mirá multimedia/LEEME.txt -->
+</div></section>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Visor">
+  <button class="ctl x" id="lbX" aria-label="Cerrar">✕</button>
+  <button class="ctl prev" id="lbP" aria-label="Anterior">‹</button>
+  <button class="ctl next" id="lbN" aria-label="Siguiente">›</button>
+  <div class="stage" id="lbStage"></div><p class="cap" id="lbCap"></p>
+</div>
+</main>
+<footer>
+  <div class="links"><a href="fenomenos.html">Fenómenos</a><a href="herramientas.html">Herramientas</a><a href="comunidad.html">Comunidad</a><a href="contacto.html">Contacto</a><a href="https://www.smn.gob.ar" target="_blank" rel="noopener">SMN oficial</a></div>
+  © <span id="year"></span> Comunidad Meteorológica Argentina (CMA) · Para alertas oficiales consultá siempre el Servicio Meteorológico Nacional
+</footer>
+<div class="toast" id="toast" role="status"></div>
+<script src="multimedia/catalogo.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

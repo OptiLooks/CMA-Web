@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Redes · CMA</title>
+<meta name="description" content="Comunidad Meteorológica Argentina: aprendé, compartí y seguí el tiempo en Argentina.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="progress"></div>
+<header>
+  <a href="index.html" class="logo">CMA<small>Comunidad Meteorológica Argentina</small></a>
+  <nav id="menu">
+    <a href="index.html">Inicio</a>
+    <a href="alertas.html">Alertas</a>
+    <a href="radares.html">Radares</a>
+    <a href="multimedia.html">Multimedia</a>
+    <a href="redes.html" aria-current="page">Redes</a>
+    <a href="contacto.html" class="btn primary">Enviá imágenes</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="Abrir menú">☰</button>
+</header>
+<div class="page-head"><h1>Redes sociales</h1><p>Encontranos, seguinos y compartí con responsabilidad.</p></div><main>
+<section><div class="wrap">
+  <h2 class="reveal">Dónde estamos</h2>
+  <p class="lead reveal">Seguinos en nuestros dos canales oficiales.</p>
+  <!-- Los enlaces se configuran en script.js, en el objeto CMA -->
+  <div class="cards reveal">
+    <a class="card wa" data-link="whatsapp" target="_blank" rel="noopener"><span class="ico">💬</span><h3>WhatsApp</h3><p>Entrá al canal de la CMA para recibir avisos y novedades de la comunidad.</p><span class="go">Entrar al canal</span></a>
+    <a class="card tt" data-link="tiktok" target="_blank" rel="noopener"><span class="ico">🎵</span><h3>TikTok · @meteolauoficial</h3><p>Videos, resúmenes de tormentas y contenido de la comunidad.</p><span class="go">Seguir en TikTok</span></a>
+  </div>
+</div></section>
+<section class="band"><div class="wrap two">
+  <div class="reveal"><h2>Compartí con la CMA</h2><p class="lead">Usá los hashtags oficiales para que tu publicación llegue a la comunidad.</p></div>
+  <div class="reveal" style="color:var(--ink)">
+    <div class="copybox"><div class="msg" id="tags">#CMA #ComunidadMeteorologicaArgentina #ClimaArgentina #Meteorologia</div>
+    <button class="btn primary" id="copyTags">Copiar hashtags</button></div>
+  </div>
+</div></section>
+<section><div class="wrap">
+  <h2 class="reveal">Antes de publicar</h2>
+  <div class="reveal" style="margin-top:20px">
+    <details open><summary>✅ Verificá la fuente</summary><div class="body">Citá al SMN u otra fuente confiable. Si es una observación propia, aclará lugar, fecha y hora.</div></details>
+    <details><summary>🚫 Evitá el alarmismo</summary><div class="body">No difundas capturas viejas ni rumores. Un aviso falso puede generar pánico real.</div></details>
+    <details><summary>🛡️ Tu seguridad primero</summary><div class="body">Ninguna foto vale el riesgo. No te acerques a tormentas, cables caídos ni zonas inundadas.</div></details>
+  </div>
+</div></section>
+</main>
+<footer>
+  <div class="links"><a href="fenomenos.html">Fenómenos</a><a href="herramientas.html">Herramientas</a><a href="comunidad.html">Comunidad</a><a href="contacto.html">Contacto</a><a href="https://www.smn.gob.ar" target="_blank" rel="noopener">SMN oficial</a></div>
+  © <span id="year"></span> Comunidad Meteorológica Argentina (CMA) · Para alertas oficiales consultá siempre el Servicio Meteorológico Nacional
+</footer>
+<div class="toast" id="toast" role="status"></div>
+<script src="script.js"></script>
+</body>
+</html>
