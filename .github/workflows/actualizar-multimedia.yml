@@ -1,0 +1,29 @@
+name: Actualizar catálogo de multimedia
+
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - 'multimedia/**'
+      - '!multimedia/catalogo.js'
+  workflow_dispatch:   # permite ejecutarlo a mano desde la pestaña Actions
+
+permissions:
+  contents: write
+
+jobs:
+  catalogo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Generar catálogo
+        run: node .github/scripts/generar-catalogo.mjs
+      - name: Guardar cambios
+        run: |
+          git config user.name "cma-bot"
+          git config user.email "cma-bot@users.noreply.github.com"
+          git add multimedia/catalogo.js
+          git diff --cached --quiet || (git commit -m "Actualizar catálogo de multimedia" && git push)
