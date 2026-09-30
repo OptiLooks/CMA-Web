@@ -1,0 +1,5 @@
+titulo: Shelf cloud sobre la ruta
+lugar: Rosario, Santa Fe
+fecha: 12/03/2026
+autor: @usuario
+descripcion: Frente de tormenta avanzando sobre la ruta. Foto de ejemplo: reemplazala por la tuya.
