@@ -1,0 +1,23 @@
+CÓMO AGREGAR MATERIAL A LA GALERÍA
+==================================
+1) Creá una carpeta por elemento:
+   multimedia/imagenes/NOMBRE/   -> una imagen (.png, .jpg, .webp) + datos.txt
+   multimedia/videos/NOMBRE/     -> un video (.mp4 o .webm) + portada opcional + datos.txt
+
+   Consejo: numerá las carpetas (01-, 02-, 03-...) para elegir el orden.
+   Usá nombres sin espacios ni acentos.
+
+2) Escribí datos.txt así (una línea por dato, todas son opcionales):
+   titulo: Tormenta sobre la ciudad
+   tipo: foto            (foto, video o timelapse; si no lo ponés, se usa el de la carpeta)
+   lugar: Córdoba, Córdoba
+   fecha: 12/03/2026
+   autor: @usuario
+   descripcion: Texto corto que se ve en el visor.
+
+3) Actualizá el catálogo (elegí UNA opción):
+   - EN GITHUB (recomendado): subí la carpeta nueva dentro de multimedia/ (imagenes/ o videos/).
+     Una acción automática (GitHub Actions) genera multimedia/catalogo.js en 1 o 2 minutos.
+   - EN TU PC: abrí actualizar-multimedia.html en Chrome o Edge, tocá el botón y elegí la carpeta "multimedia".
+
+4) Abrí multimedia.html y listo.
