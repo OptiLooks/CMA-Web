@@ -1,0 +1,9 @@
+Cada video va en su propia carpeta dentro de "videos", por ejemplo:
+
+videos/
+  01-rayos-ciudad/
+    video.mp4        (obligatorio: .mp4 o .webm)
+    portada.png      (opcional: imagen que se ve en la galería)
+    datos.txt        (los datos del video)
+
+Esta carpeta de ejemplo (LEEME.txt) no se muestra en la web: solo se leen las subcarpetas.
